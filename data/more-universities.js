@@ -1,0 +1,151 @@
+// Added by hand from general knowledge, NOT from the official HRK register: verify before publishing.
+// Format: "Name|City". Church-run, state-recognised institutions are listed as "private".
+// Founded year and website are optional; add them to any entry by converting it to an object.
+const g = (state, type, rows) =>
+  rows.map((r) => { const [name, city] = r.split("|"); return { name, city, state, type }; });
+
+export const more = [
+  ...g("Baden-Württemberg", "public", [
+    "Aalen University|Aalen", "Albstadt-Sigmaringen University|Albstadt", "Biberach University of Applied Sciences|Biberach",
+    "Esslingen University of Applied Sciences|Esslingen", "Furtwangen University|Furtwangen", "Heilbronn University|Heilbronn",
+    "Karlsruhe University of Applied Sciences|Karlsruhe", "HTWG Konstanz|Konstanz", "Kehl University of Applied Sciences|Kehl",
+    "Mannheim University of Applied Sciences|Mannheim", "Offenburg University|Offenburg", "Pforzheim University|Pforzheim",
+    "Ravensburg-Weingarten University|Weingarten", "Reutlingen University|Reutlingen", "Nürtingen-Geislingen University|Nürtingen",
+    "Stuttgart Media University|Stuttgart", "Stuttgart University of Applied Sciences (HFT)|Stuttgart",
+    "Rottenburg University of Forestry|Rottenburg am Neckar", "Ludwigsburg University of Public Administration|Ludwigsburg",
+    "University of Education Freiburg|Freiburg", "University of Education Heidelberg|Heidelberg", "University of Education Karlsruhe|Karlsruhe",
+    "University of Education Ludwigsburg|Ludwigsburg", "University of Education Schwäbisch Gmünd|Schwäbisch Gmünd",
+    "University of Education Weingarten|Weingarten", "Baden-Württemberg Cooperative State University (DHBW)|Stuttgart",
+    "University of Music Freiburg|Freiburg", "University of Music Karlsruhe|Karlsruhe", "University of Music Trossingen|Trossingen",
+    "State University of Music and Performing Arts Stuttgart|Stuttgart", "State Academy of Fine Arts Karlsruhe|Karlsruhe",
+    "State Academy of Fine Arts Stuttgart|Stuttgart", "Karlsruhe University of Arts and Design (HfG)|Karlsruhe",
+    "Film Academy Baden-Württemberg|Ludwigsburg",
+  ]),
+  ...g("Baden-Württemberg", "private", [
+    "SRH University Heidelberg|Heidelberg", "Evangelische Hochschule Freiburg|Freiburg", "Katholische Hochschule Freiburg|Freiburg",
+    "Evangelische Hochschule Ludwigsburg|Ludwigsburg", "Merz Akademie|Stuttgart",
+  ]),
+  ...g("Bavaria", "public", [
+    "University of Augsburg|Augsburg", "University of Bamberg|Bamberg", "University of Passau|Passau",
+    "University of the Bundeswehr Munich|Neubiberg", "Munich University of Applied Sciences|Munich",
+    "Nuremberg Institute of Technology (TH Nürnberg)|Nuremberg", "Augsburg Technical University of Applied Sciences|Augsburg",
+    "Ansbach University of Applied Sciences|Ansbach", "Aschaffenburg University of Applied Sciences|Aschaffenburg",
+    "Coburg University of Applied Sciences|Coburg", "Deggendorf Institute of Technology|Deggendorf", "Hof University of Applied Sciences|Hof",
+    "Ingolstadt Technical University of Applied Sciences|Ingolstadt", "Kempten University of Applied Sciences|Kempten",
+    "Landshut University of Applied Sciences|Landshut", "Neu-Ulm University of Applied Sciences|Neu-Ulm",
+    "OTH Regensburg|Regensburg", "OTH Amberg-Weiden|Weiden", "Rosenheim Technical University of Applied Sciences|Rosenheim",
+    "Würzburg-Schweinfurt Technical University of Applied Sciences|Würzburg", "Weihenstephan-Triesdorf University of Applied Sciences|Freising",
+    "University of Music and Theatre Munich|Munich", "University of Television and Film Munich|Munich",
+    "Academy of Fine Arts Munich|Munich", "Academy of Fine Arts Nuremberg|Nuremberg", "University of Music Würzburg|Würzburg",
+    "University of Music Nuremberg|Nuremberg",
+  ]),
+  ...g("Bavaria", "private", [
+    "Munich Business School|Munich", "Macromedia University of Applied Sciences|Munich", "Munich School of Philosophy|Munich",
+    "Katholische Stiftungshochschule München|Munich", "Evangelische Hochschule Nürnberg|Nuremberg",
+  ]),
+  ...g("Berlin", "public", [
+    "Berlin University of the Arts|Berlin", "HTW Berlin|Berlin", "HWR Berlin|Berlin", "Berlin University of Applied Sciences and Technology (BHT)|Berlin",
+    "Alice Salomon University of Applied Sciences|Berlin", "Weißensee Academy of Art Berlin|Berlin",
+    "Ernst Busch Academy of Dramatic Arts|Berlin", "Hanns Eisler School of Music|Berlin",
+  ]),
+  ...g("Berlin", "private", [
+    "Touro University Berlin|Berlin", "Bard College Berlin|Berlin", "SRH Berlin University of Applied Sciences|Berlin",
+    "Steinbeis University Berlin|Berlin", "CODE University of Applied Sciences|Berlin", "Psychologische Hochschule Berlin|Berlin",
+    "Medical School Berlin|Berlin", "Berlin International University of Applied Sciences|Berlin", "Evangelische Hochschule Berlin|Berlin",
+    "Katholische Hochschule für Sozialwesen Berlin|Berlin", "Akkon University for Human Sciences|Berlin",
+  ]),
+  ...g("Brandenburg", "public", [
+    "Brandenburg University of Technology Cottbus-Senftenberg|Cottbus", "European University Viadrina|Frankfurt (Oder)",
+    "Film University Babelsberg Konrad Wolf|Potsdam", "Brandenburg University of Applied Sciences|Brandenburg an der Havel",
+    "Technical University of Applied Sciences Wildau|Wildau", "Eberswalde University for Sustainable Development|Eberswalde",
+    "Potsdam University of Applied Sciences|Potsdam",
+  ]),
+  ...g("Bremen", "public", ["Bremen University of Applied Sciences|Bremen", "Bremerhaven University of Applied Sciences|Bremerhaven", "University of the Arts Bremen|Bremen"]),
+  ...g("Bremen", "private", ["APOLLON University of Health Care Management|Bremen"]),
+  ...g("Hamburg", "public", [
+    "Hamburg University of Technology|Hamburg", "HafenCity University Hamburg|Hamburg", "Helmut Schmidt University|Hamburg",
+    "HAW Hamburg|Hamburg", "Hamburg University of Fine Arts|Hamburg", "Hamburg University of Music and Theatre|Hamburg",
+  ]),
+  ...g("Hamburg", "private", [
+    "Hamburg School of Business Administration (HSBA)|Hamburg", "MSH Medical School Hamburg|Hamburg",
+    "Europäische Fernhochschule Hamburg|Hamburg", "Evangelische Hochschule für Soziale Arbeit & Diakonie|Hamburg",
+  ]),
+  ...g("Hesse", "public", [
+    "Justus Liebig University Giessen|Giessen", "University of Kassel|Kassel", "RheinMain University of Applied Sciences|Wiesbaden",
+    "Frankfurt University of Applied Sciences|Frankfurt", "Technische Hochschule Mittelhessen|Giessen", "Darmstadt University of Applied Sciences|Darmstadt",
+    "Fulda University of Applied Sciences|Fulda", "Hochschule Geisenheim University|Geisenheim", "Offenbach University of Art and Design|Offenbach",
+    "Frankfurt University of Music and Performing Arts|Frankfurt", "Städelschule|Frankfurt", "Kassel Art Academy|Kassel",
+  ]),
+  ...g("Hesse", "private", [
+    "Provadis School of International Management and Technology|Frankfurt", "EBS University for Business and Law|Wiesbaden",
+    "Sankt Georgen Graduate School of Philosophy and Theology|Frankfurt", "Evangelische Hochschule Darmstadt|Darmstadt",
+  ]),
+  ...g("Mecklenburg-Vorpommern", "public", [
+    "Neubrandenburg University of Applied Sciences|Neubrandenburg", "Stralsund University of Applied Sciences|Stralsund",
+    "Wismar University of Applied Sciences|Wismar", "University of Music and Theatre Rostock|Rostock",
+  ]),
+  ...g("Lower Saxony", "public", [
+    "University of Oldenburg|Oldenburg", "University of Hildesheim|Hildesheim", "Leuphana University Lüneburg|Lüneburg",
+    "Osnabrück University|Osnabrück", "Clausthal University of Technology|Clausthal-Zellerfeld", "University of Vechta|Vechta",
+    "University of Veterinary Medicine Hannover|Hannover", "Hannover Medical School|Hannover", "Hannover University of Applied Sciences|Hannover",
+    "Ostfalia University of Applied Sciences|Wolfenbüttel", "Jade University of Applied Sciences|Wilhelmshaven",
+    "Emden/Leer University of Applied Sciences|Emden", "Osnabrück University of Applied Sciences|Osnabrück", "HAWK Hildesheim/Holzminden/Göttingen|Hildesheim",
+    "Hannover University of Music, Drama and Media|Hannover", "Braunschweig University of Art|Braunschweig",
+  ]),
+  ...g("Lower Saxony", "private", ["Hochschule 21|Buxtehude", "Weserbergland University of Applied Sciences|Hameln"]),
+  ...g("North Rhine-Westphalia", "public", [
+    "Bielefeld University|Bielefeld", "Paderborn University|Paderborn", "University of Siegen|Siegen", "University of Wuppertal|Wuppertal",
+    "University of Duisburg-Essen|Essen", "Heinrich Heine University Düsseldorf|Düsseldorf", "FernUniversität in Hagen|Hagen",
+    "German Sport University Cologne|Cologne", "TH Köln|Cologne", "FH Aachen|Aachen", "Bielefeld University of Applied Sciences|Bielefeld",
+    "Bochum University of Applied Sciences|Bochum", "Westphalian University of Applied Sciences|Gelsenkirchen",
+    "Düsseldorf University of Applied Sciences|Düsseldorf", "Dortmund University of Applied Sciences|Dortmund",
+    "Hamm-Lippstadt University of Applied Sciences|Hamm", "Niederrhein University of Applied Sciences|Krefeld", "Rhine-Waal University of Applied Sciences|Kleve",
+    "Ruhr West University of Applied Sciences|Mülheim an der Ruhr", "Bonn-Rhein-Sieg University of Applied Sciences|Sankt Augustin",
+    "Münster University of Applied Sciences|Münster", "OWL University of Applied Sciences and Arts|Lemgo",
+    "South Westphalia University of Applied Sciences|Iserlohn", "German Police University|Münster", "Hochschule für Gesundheit|Bochum",
+    "Düsseldorf Art Academy|Düsseldorf", "Münster Art Academy|Münster", "Folkwang University of the Arts|Essen",
+    "Robert Schumann Hochschule Düsseldorf|Düsseldorf", "University of Music and Dance Cologne|Cologne", "Detmold University of Music|Detmold",
+    "Academy of Media Arts Cologne|Cologne",
+  ]),
+  ...g("North Rhine-Westphalia", "private", [
+    "Cologne Business School|Cologne", "FOM University of Applied Sciences|Essen", "ISM International School of Management|Dortmund",
+    "Fachhochschule des Mittelstands (FHM)|Bielefeld", "Rheinische Fachhochschule Köln|Cologne", "Alanus University|Alfter",
+    "Katholische Hochschule NRW|Cologne", "Evangelische Hochschule Rheinland-Westfalen-Lippe|Bochum", "TH Georg Agricola|Bochum",
+  ]),
+  ...g("Rhineland-Palatinate", "public", [
+    "Trier University|Trier", "Koblenz University of Applied Sciences|Koblenz", "Trier University of Applied Sciences|Trier",
+    "Kaiserslautern University of Applied Sciences|Kaiserslautern", "Ludwigshafen University of Business and Society|Ludwigshafen",
+    "Mainz University of Applied Sciences|Mainz", "Worms University of Applied Sciences|Worms", "Bingen University of Applied Sciences|Bingen",
+    "University of Music Mainz|Mainz", "German University of Administrative Sciences Speyer|Speyer",
+  ]),
+  ...g("Rhineland-Palatinate", "private", ["Cusanus Hochschule|Koblenz", "PTH Vallendar|Vallendar", "Katholische Hochschule Mainz|Mainz"]),
+  ...g("Saarland", "public", [
+    "htw saar|Saarbrücken", "Saar University of Fine Arts|Saarbrücken", "Saar University of Music|Saarbrücken",
+  ]),
+  ...g("Saxony", "public", [
+    "Chemnitz University of Technology|Chemnitz", "TU Bergakademie Freiberg|Freiberg", "HTWK Leipzig|Leipzig", "HTW Dresden|Dresden",
+    "Mittweida University of Applied Sciences|Mittweida", "Zittau/Görlitz University of Applied Sciences|Zittau",
+    "West Saxon University of Applied Sciences Zwickau|Zwickau", "Dresden Academy of Fine Arts|Dresden",
+    "Academy of Visual Arts Leipzig|Leipzig", "University of Music and Theatre Leipzig|Leipzig",
+    "Carl Maria von Weber University of Music Dresden|Dresden", "Palucca University of Dance Dresden|Dresden",
+  ]),
+  ...g("Saxony", "private", ["Dresden International University|Dresden", "Evangelische Hochschule Dresden|Dresden"]),
+  ...g("Saxony-Anhalt", "public", [
+    "Anhalt University of Applied Sciences|Köthen", "Harz University of Applied Sciences|Wernigerode",
+    "Magdeburg-Stendal University of Applied Sciences|Magdeburg", "Merseburg University of Applied Sciences|Merseburg",
+    "Burg Giebichenstein University of Art and Design|Halle",
+  ]),
+  ...g("Saxony-Anhalt", "private", ["Friedensau Adventist University|Möckern"]),
+  ...g("Schleswig-Holstein", "public", [
+    "Europa-Universität Flensburg|Flensburg", "University of Lübeck|Lübeck", "Flensburg University of Applied Sciences|Flensburg",
+    "Kiel University of Applied Sciences|Kiel", "Lübeck University of Applied Sciences|Lübeck", "West Coast University of Applied Sciences|Heide",
+    "Muthesius University of Fine Arts and Design|Kiel", "Lübeck University of Music|Lübeck",
+  ]),
+  ...g("Schleswig-Holstein", "private", ["NORDAKADEMIE|Elmshorn", "Fachhochschule Wedel|Wedel"]),
+  ...g("Thuringia", "public", [
+    "Ilmenau University of Technology|Ilmenau", "Bauhaus-Universität Weimar|Weimar", "University of Erfurt|Erfurt",
+    "Franz Liszt University of Music Weimar|Weimar", "Ernst Abbe University of Applied Sciences|Jena",
+    "Erfurt University of Applied Sciences|Erfurt", "Nordhausen University of Applied Sciences|Nordhausen",
+    "Schmalkalden University of Applied Sciences|Schmalkalden",
+  ]),
+];
