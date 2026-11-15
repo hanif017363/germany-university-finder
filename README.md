@@ -1,30 +1,28 @@
-# Universities in Germany
+<h1 align="center">Germany University Finder</h1>
 
-```bash
-npm install
-npm run dev     # http://localhost:3000
-```
+<p align="center">
+  A simple, fast way to explore universities in Germany, built with international students in mind.
+</p>
 
-Each university has a page at `/universities/<slug>` with name, state, type (public, private or church-run),
-institution profile, a tuition summary, accordions for programme fees and admission requirements, and a link to the official website.
+<p align="center">
+  <a href="https://germany-university-finder.vercel.app/"><strong>Live demo →</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/hanif017363/germany-university-finder"><strong>GitHub repository →</strong></a>
+</p>
 
-## Adding programmes and fees
+<p align="center">
+  <img width="650" alt="Home page on desktop" src="https://github.com/user-attachments/assets/8610b914-bb28-49ba-b02c-f68453b28075" />
+  &nbsp;&nbsp;
+  <img width="200" alt="Home page on mobile" src="https://github.com/user-attachments/assets/43388fb8-5ef8-4d54-a59f-9b8bc676cd23" />
+</p>
 
-1. Fill in `data/courses.csv` (one row per programme). Columns:
-   `university, program, degree, duration, language, fee_eu, fee_non_eu, ielts, toefl, gmat, gre, min_grade, german, other, url`
-   - `university`: exact name shown on the site, or the slug from the page URL
-   - only `university` and `program` are required; empty cells show as a dash
-2. Run `node scripts/import-courses.mjs`
-3. Restart `npm run dev`
+---
 
-Take fees and requirements from the university's official programme pages and re-check them every intake.
+## About
 
-## University-specific info for international students
+Finding the right university in Germany means jumping between dozens of websites. This project puts the basics in one place: browse about 400 higher-education institutions, filter them by type and state, and open a page for each one with the details an international applicant looks for first.
 
-Fill in `data/university-info.csv` (columns: `university, application_portal, deadline_winter, deadline_summer, german_required, international_office_url, housing_url, scholarships_url, notes`)
-and run the same import script. A row needs `university` and `application_portal`. The general guide lives at `/guide` (`app/guide/page.js`); update its figures each year.
 
-## Notes
+## License
 
-- `data/universities.js` uses only the imported dataset (`IMPORTED_ONLY = true`). Set it to `false` to add the hand-written lists back (they duplicate many imported entries).
-- Church-run status is detected from the institution name in `data/classify.mjs`.
+A license has not been added yet.
